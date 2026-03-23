@@ -21,6 +21,124 @@ body {
   margin-bottom: 60px;
 }
 
+.property-page {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.property-page__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.property-page__header p {
+  margin: 0;
+  color: #5f6b7a;
+}
+
+.property-alert {
+  border: 1px solid #f1c9c9;
+  border-radius: 0.75rem;
+  background: #fff3f3;
+  color: #8a1f1f;
+  padding: 1rem;
+}
+
+.property-table {
+  border: 1px solid #d9e2ec;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #fff;
+}
+
+.property-table__row {
+  display: grid;
+  grid-template-columns: minmax(110px, 0.7fr) minmax(240px, 1.4fr) minmax(230px, 1.2fr) minmax(140px, 0.8fr) minmax(120px, 0.7fr) minmax(120px, 0.7fr) minmax(150px, 0.8fr) minmax(170px, 0.9fr) minmax(220px, 1fr) minmax(170px, 0.9fr) minmax(170px, 0.9fr) minmax(120px, 0.7fr) minmax(140px, 0.8fr) minmax(140px, 0.8fr) minmax(150px, 0.8fr);
+  gap: 0;
+}
+
+.property-table__row + .property-table__row {
+  border-top: 1px solid #d9e2ec;
+}
+
+.property-table__row--head {
+  background: #eef4f8;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #344054;
+}
+
+.property-table__cell {
+  padding: 0.9rem;
+  border-right: 1px solid #d9e2ec;
+  min-width: 0;
+}
+
+.property-table__cell:last-child {
+  border-right: 0;
+}
+
+.property-table__cell strong {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.property-table__cell p {
+  margin: 0;
+}
+
+.property-table__scroll {
+  overflow-x: auto;
+}
+
+.property-table__meta {
+  display: grid;
+  gap: 0.35rem;
+  color: #475467;
+  font-size: 0.92rem;
+}
+
+.property-table__description {
+  color: #475467;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.property-image-list {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.property-image-list__item {
+  display: grid;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.property-image-list__item a {
+  word-break: break-all;
+}
+
+.property-empty {
+  padding: 1.25rem;
+  color: #5f6b7a;
+}
+
+@media (max-width: 768px) {
+  .property-page__header {
+    gap: 0.75rem;
+  }
+
+  .property-table__row {
+    min-width: 1800px;
+  }
+}
+
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
   color: var(--bs-secondary-color);
   text-align: end;

@@ -1,0 +1,116 @@
+@model IReadOnlyList<PropertyHubMVC.Models.Property>
+
+@{
+    ViewData["Title"] = "Properties";
+    var errorMessage = ViewData["ErrorMessage"] as string;
+}
+
+<section class="property-page">
+    <div class="property-page__header">
+        <h1>Property Listings</h1>
+        <p>This page pulls property data from the separate API project and renders each listing in a div-based table layout.</p>
+    </div>
+
+    @if (!string.IsNullOrWhiteSpace(errorMessage))
+    {
+        <div class="property-alert">@errorMessage</div>
+    }
+
+    <div class="property-table">
+        <div class="property-table__scroll">
+            <div class="property-table__row property-table__row--head">
+                <div class="property-table__cell">Id</div>
+                <div class="property-table__cell">Listing</div>
+                <div class="property-table__cell">Description</div>
+                <div class="property-table__cell">Address</div>
+                <div class="property-table__cell">Price</div>
+                <div class="property-table__cell">Type</div>
+                <div class="property-table__cell">Beds / Baths</div>
+                <div class="property-table__cell">Size</div>
+                <div class="property-table__cell">Status / Dates</div>
+                <div class="property-table__cell">Coordinates</div>
+                <div class="property-table__cell">Images</div>
+                <div class="property-table__cell">Agent Id</div>
+                <div class="property-table__cell">Created</div>
+                <div class="property-table__cell">Updated</div>
+                <div class="property-table__cell">Year Built</div>
+            </div>
+
+            @if (Model.Count == 0)
+            {
+                <div class="property-empty">No properties were returned by the API.</div>
+            }
+            else
+            {
+                @foreach (var property in Model)
+                {
+                    var orderedImages = property.PropertyImages.OrderBy(image => image.SortOrder).ToList();
+
+                    <div class="property-table__row">
+                        <div class="property-table__cell">
+                            <strong>#@property.Id</strong>
+                        </div>
+                        <div class="property-table__cell">
+                            <strong>@property.Title</strong>
+                            <div class="property-table__meta">
+                                <span>@property.City, @property.State @property.ZipCode</span>
+                            </div>
+                        </div>
+                        <div class="property-table__cell">
+                            <p class="property-table__description">@property.Description</p>
+                        </div>
+                        <div class="property-table__cell">
+                            <div class="property-table__meta">
+                                <span>@property.Address</span>
+                                <span>@property.City, @property.State @property.ZipCode</span>
+                            </div>
+                        </div>
+                        <div class="property-table__cell">@property.Price.ToString("C")</div>
+                        <div class="property-table__cell">@property.PropertyType</div>
+                        <div class="property-table__cell">@property.Bedrooms / @property.Bathrooms</div>
+                        <div class="property-table__cell">
+                            <div class="property-table__meta">
+                                <span>@property.SquareFootage sq ft</span>
+                                <span>Built: @(property.YearBuilt?.ToString() ?? "N/A")</span>
+                            </div>
+                        </div>
+                        <div class="property-table__cell">
+                            <div class="property-table__meta">
+                                <span>@property.Status</span>
+                                <span>Listed: @property.DateListed.ToString("MMM dd, yyyy")</span>
+                            </div>
+                        </div>
+                        <div class="property-table__cell">
+                            <div class="property-table__meta">
+                                <span>Lat: @(property.Latitude?.ToString() ?? "N/A")</span>
+                                <span>Lng: @(property.Longitude?.ToString() ?? "N/A")</span>
+                            </div>
+                        </div>
+                        <div class="property-table__cell">
+                            @if (orderedImages.Count == 0)
+                            {
+                                <span>No images</span>
+                            }
+                            else
+                            {
+                                <div class="property-image-list">
+                                    @foreach (var image in orderedImages)
+                                    {
+                                        <div class="property-image-list__item">
+                                            <span>@(image.IsPrimary ? "Primary image" : "Gallery image")</span>
+                                            <a href="@image.ImageUrl" target="_blank" rel="noreferrer">@image.ImageUrl</a>
+                                        </div>
+                                    }
+                                </div>
+                            }
+                        </div>
+                        <div class="property-table__cell">@property.AgentId</div>
+                        <div class="property-table__cell">@property.CreatedAt.ToString("MMM dd, yyyy")</div>
+                        <div class="property-table__cell">@(property.UpdatedAt?.ToString("MMM dd, yyyy") ?? "N/A")</div>
+                        <div class="property-table__cell">@(property.YearBuilt?.ToString() ?? "N/A")</div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</section>

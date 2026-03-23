@@ -2,6 +2,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.Configure<PropertyHubMVC.Options.PropertyApiOptions>(
+    builder.Configuration.GetSection(PropertyHubMVC.Options.PropertyApiOptions.SectionName));
+builder.Services.AddHttpClient<PropertyHubMVC.Services.PropertyApiClient>();
 
 var app = builder.Build();
 
@@ -25,5 +28,4 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
 
-
-app.Run();
+await app.RunAsync();
