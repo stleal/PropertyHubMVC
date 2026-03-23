@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\LealS\\OneDrive\\fRAMily\\Documents\\Git\\Repos\\STLEAL\\fRAMily\\MVCs\\PropertyHubApp\\PropertyHubMVC\\PropertyHubMVC.csproj": {}
+    "c:\\Users\\LealS\\OneDrive\\fRAMily\\Documents\\Git\\Repos\\STLEAL\\fRAMily\\MVCs\\PropertyHubApp\\PropertyHubMVC\\PropertyHubMVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\LealS\\OneDrive\\fRAMily\\Documents\\Git\\Repos\\STLEAL\\fRAMily\\MVCs\\PropertyHubApp\\PropertyHubMVC\\PropertyHubMVC.csproj": {
+    "c:\\Users\\LealS\\OneDrive\\fRAMily\\Documents\\Git\\Repos\\STLEAL\\fRAMily\\MVCs\\PropertyHubApp\\PropertyHubMVC\\PropertyHubMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LealS\\OneDrive\\fRAMily\\Documents\\Git\\Repos\\STLEAL\\fRAMily\\MVCs\\PropertyHubApp\\PropertyHubMVC\\PropertyHubMVC.csproj",
+        "projectUniqueName": "c:\\Users\\LealS\\OneDrive\\fRAMily\\Documents\\Git\\Repos\\STLEAL\\fRAMily\\MVCs\\PropertyHubApp\\PropertyHubMVC\\PropertyHubMVC.csproj",
         "projectName": "PropertyHubMVC",
-        "projectPath": "C:\\Users\\LealS\\OneDrive\\fRAMily\\Documents\\Git\\Repos\\STLEAL\\fRAMily\\MVCs\\PropertyHubApp\\PropertyHubMVC\\PropertyHubMVC.csproj",
+        "projectPath": "c:\\Users\\LealS\\OneDrive\\fRAMily\\Documents\\Git\\Repos\\STLEAL\\fRAMily\\MVCs\\PropertyHubApp\\PropertyHubMVC\\PropertyHubMVC.csproj",
         "packagesPath": "C:\\Users\\LealS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LealS\\OneDrive\\fRAMily\\Documents\\Git\\Repos\\STLEAL\\fRAMily\\MVCs\\PropertyHubApp\\PropertyHubMVC\\obj\\",
+        "outputPath": "c:\\Users\\LealS\\OneDrive\\fRAMily\\Documents\\Git\\Repos\\STLEAL\\fRAMily\\MVCs\\PropertyHubApp\\PropertyHubMVC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
