@@ -34,6 +34,59 @@ a {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
+.nav-item--with-panel {
+  position: relative;
+}
+
+.nav-hover-panel {
+  position: absolute;
+  top: calc(100% + 0.35rem);
+  left: 0;
+  min-width: 12rem;
+  padding: 0.5rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0.35rem);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  z-index: 1000;
+}
+
+.nav-hover-panel__link {
+  display: block;
+  padding: 0.55rem 0.8rem;
+  border-radius: 0.35rem;
+  color: #212529;
+  text-decoration: none;
+}
+
+.nav-hover-panel__link:hover,
+.nav-hover-panel__link:focus {
+  background: #f5f5f5;
+  color: #212529;
+}
+
+.nav-item--with-panel:hover .nav-hover-panel,
+.nav-item--with-panel:focus-within .nav-hover-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+@media (max-width: 575.98px) {
+  .nav-hover-panel {
+    position: static;
+    margin-top: 0.25rem;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+  }
+}
+
 button.accept-policy {
   font-size: 1rem;
   line-height: inherit;
