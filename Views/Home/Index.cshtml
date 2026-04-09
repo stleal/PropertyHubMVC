@@ -1,8 +1,136 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!-- Hero -->
+<section class="ph-hero">
+    <div class="ph-hero__content">
+        <span class="ph-hero__badge">🏡 Real Estate Made Simple</span>
+        <h1 class="ph-hero__heading">Find Your Perfect<br />Property</h1>
+        <p class="ph-hero__sub">
+            Browse thousands of residential and commercial listings in one place.
+            Filter by location, price, size, and more — all without the noise.
+        </p>
+        <div class="ph-hero__actions">
+            <a asp-controller="Property" asp-action="Index" class="btn ph-btn-primary">Browse Listings</a>
+            <a asp-controller="Home" asp-action="About" class="btn ph-btn-ghost">Learn More</a>
+        </div>
+    </div>
+    <div class="ph-hero__graphic" aria-hidden="true">
+        <div class="ph-house-card">
+            <div class="ph-house-card__img">🏠</div>
+            <div class="ph-house-card__body">
+                <span class="ph-house-card__tag">For Sale</span>
+                <p class="ph-house-card__title">Modern Family Home</p>
+                <p class="ph-house-card__detail">4 bed · 2 bath · 2,400 sq ft</p>
+                <p class="ph-house-card__price">$485,000</p>
+            </div>
+        </div>
+        <div class="ph-house-card ph-house-card--offset">
+            <div class="ph-house-card__img ph-house-card__img--alt">🏢</div>
+            <div class="ph-house-card__body">
+                <span class="ph-house-card__tag ph-house-card__tag--rent">For Rent</span>
+                <p class="ph-house-card__title">Downtown Loft</p>
+                <p class="ph-house-card__detail">2 bed · 1 bath · 1,100 sq ft</p>
+                <p class="ph-house-card__price">$2,200 / mo</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats bar -->
+<section class="ph-stats">
+    <div class="ph-stats__item">
+        <span class="ph-stats__number">1,200+</span>
+        <span class="ph-stats__label">Active Listings</span>
+    </div>
+    <div class="ph-stats__divider" aria-hidden="true"></div>
+    <div class="ph-stats__item">
+        <span class="ph-stats__number">40+</span>
+        <span class="ph-stats__label">Neighborhoods</span>
+    </div>
+    <div class="ph-stats__divider" aria-hidden="true"></div>
+    <div class="ph-stats__item">
+        <span class="ph-stats__number">98%</span>
+        <span class="ph-stats__label">Happy Clients</span>
+    </div>
+    <div class="ph-stats__divider" aria-hidden="true"></div>
+    <div class="ph-stats__item">
+        <span class="ph-stats__number">$0</span>
+        <span class="ph-stats__label">Hidden Fees</span>
+    </div>
+</section>
+
+<!-- Feature cards -->
+<section class="ph-features">
+    <h2 class="ph-features__heading">Why PropertyHub?</h2>
+    <div class="ph-features__grid">
+        <div class="ph-feature-card">
+            <div class="ph-feature-card__icon">🔍</div>
+            <h3 class="ph-feature-card__title">Powerful Search</h3>
+            <p class="ph-feature-card__text">
+                Filter listings by price range, bedrooms, bathrooms, lot size, year built,
+                and dozens of other criteria to zero in on exactly what you want.
+            </p>
+        </div>
+        <div class="ph-feature-card">
+            <div class="ph-feature-card__icon">📸</div>
+            <h3 class="ph-feature-card__title">Rich Media</h3>
+            <p class="ph-feature-card__text">
+                Every listing includes high-resolution photos, floor plans, and virtual
+                tour links so you can explore a property before you step foot inside.
+            </p>
+        </div>
+        <div class="ph-feature-card">
+            <div class="ph-feature-card__icon">📍</div>
+            <h3 class="ph-feature-card__title">Location Insights</h3>
+            <p class="ph-feature-card__text">
+                See walk scores, school ratings, nearby amenities, and commute times
+                right alongside each listing — everything you need in one view.
+            </p>
+        </div>
+        <div class="ph-feature-card">
+            <div class="ph-feature-card__icon">⚡</div>
+            <h3 class="ph-feature-card__title">Real-Time Updates</h3>
+            <p class="ph-feature-card__text">
+                Listings are synced continuously. New properties appear the moment
+                they hit the market so you're never working with stale data.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- How it works -->
+<section class="ph-steps">
+    <h2 class="ph-steps__heading">How It Works</h2>
+    <ol class="ph-steps__list">
+        <li class="ph-step">
+            <span class="ph-step__number">1</span>
+            <div>
+                <h3 class="ph-step__title">Browse Listings</h3>
+                <p class="ph-step__text">Head to the <a asp-controller="Property" asp-action="Index">Properties</a> page and explore the full catalogue of available properties.</p>
+            </div>
+        </li>
+        <li class="ph-step">
+            <span class="ph-step__number">2</span>
+            <div>
+                <h3 class="ph-step__title">Review the Details</h3>
+                <p class="ph-step__text">Click any listing to see photos, pricing, specs, and location information all in one place.</p>
+            </div>
+        </li>
+        <li class="ph-step">
+            <span class="ph-step__number">3</span>
+            <div>
+                <h3 class="ph-step__title">Get in Touch</h3>
+                <p class="ph-step__text">Found something you love? <a asp-controller="Home" asp-action="Contact">Contact us</a> and our team will help you take the next step.</p>
+            </div>
+        </li>
+    </ol>
+</section>
+
+<!-- CTA banner -->
+<section class="ph-cta">
+    <h2 class="ph-cta__heading">Ready to find your next home?</h2>
+    <p class="ph-cta__sub">Join thousands of satisfied clients who discovered their perfect property through PropertyHub.</p>
+    <a asp-controller="Property" asp-action="Index" class="btn ph-btn-primary ph-btn-primary--light">Start Browsing Now</a>
+</section>
